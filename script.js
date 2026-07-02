@@ -1,5 +1,7 @@
 // Welcome message when the website opens
-alert("Welcome to EduLearn!");
+window.onload = function () {
+    alert("Welcome to EduLearn!");
+};
 
 // Display a welcome message
 function showMessage() {
@@ -8,19 +10,30 @@ function showMessage() {
 
 // Show today's date
 function showDate() {
-    document.getElementById("date").innerHTML =
-        "Today's Date: " + new Date().toDateString();
+    const dateElement = document.getElementById("date");
+    if (dateElement) {
+        dateElement.innerHTML = "Today's Date: " + new Date().toDateString();
+    }
 }
 
 // Change the heading color
 function changeColor() {
-    document.getElementById("heading").style.color = "blue";
+    const heading = document.getElementById("heading");
+    if (heading) {
+        heading.style.color = "blue";
+    }
 }
 
 // Display available courses
 function showCourses() {
-    let courses = "HTML\nCSS\nJavaScript\nPython";
-    alert("Available Courses:\n\n" + courses);
+    const courses = [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Python"
+    ];
+
+    alert("Available Courses:\n\n" + courses.join("\n"));
 }
 
 // Thank you message
